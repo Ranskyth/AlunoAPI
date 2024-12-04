@@ -1,4 +1,4 @@
-## Executa o Projeto
+## Running the Project
 
 ```bash
 git clone https://github.com/GabrielLimaG3/AlunoAPI.git
@@ -13,7 +13,7 @@ dotnet ef migrations add <Name_Migration>
 dotnet ef database update
 ```
 
-## Endpoints
+<h2 align="center">Endpoints</h2>
 
 <table align="center" border>
   <tr>
@@ -38,7 +38,7 @@ dotnet ef database update
   </tr>
 </table>
 
-## Dependencies
+<h2 align="center">Dependencies</h2>
 
 <table align="center" border>
   <tr>
@@ -87,7 +87,7 @@ dotnet ef database update
     <td>Swashbuckle.AspNetCore</td>
     <td>6.6.2</td>
     <td>
-      <a href="https://www.nuget.org/packages/Newtonsoft.Json/12.0.2">NuGet</a>
+      <a href="https://www.nuget.org/packages/Swashbuckle.AspNetCore/6.6.1">NuGet</a>
     </td>
   </tr>
     <tr>
