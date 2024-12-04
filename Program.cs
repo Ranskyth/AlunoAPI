@@ -21,18 +21,20 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPost("/Aluno", (AppContextDB context, AlunoModel aluno) => {
+var groupRoutes = app.MapGroup("/api/v1");
+
+groupRoutes.MapPost("/aluno", (AppContextDB context, AlunoModel aluno) => {
     context.Alunos.Add(aluno);
     context.SaveChanges();
     return Results.Created($"/Aluno/{aluno.Id}", aluno);
 });
 
-app.MapGet("/Alunos", async (AppContextDB context)=>{
+groupRoutes.MapGet("/alunos", async (AppContextDB context)=>{
     List<AlunoModel> Alunos = await context.Alunos.ToListAsync();
     return Results.Ok(Alunos);
 });
 
-app.MapDelete("/Aluno/{nome}/Nome", async (AppContextDB context, string nome) => {
+groupRoutes.MapDelete("/aluno/{nome}/nome", async (AppContextDB context, string nome) => {
     var alunodelete = await context.Alunos.Where(x => x.Nome == nome).FirstOrDefaultAsync();
     if(alunodelete == null){
         return Results.NotFound();
