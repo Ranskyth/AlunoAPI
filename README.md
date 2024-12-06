@@ -6,10 +6,10 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 
 ## Funcionalidades
 
-- [x]   Cadastro de Usuario
-- [x]   Consulta de Usuario Por ID e Nome
-- [x]   Atualizar Cliente Pelo ID
-- [x]   Deleta Todos os Usuario ou Deleta Por ID
+- [x]   Cadastro de Aluno
+- [x]   Consulta de Aluno Por ID e Nome
+- [x]   Atualizar Aluno Pelo ID
+- [x]   Deleta Todos os Aluno ou Deleta Por ID
 
 
 ## Documentação da API
