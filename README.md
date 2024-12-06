@@ -97,5 +97,9 @@ __obs__ : Crie uma migration (substitua <Nome_Migration> por um nome significati
 
 ## Stack utilizada
 
-**Back-end:** Asp.Net Core, Docker, Postgres, Entity Framework Core, Swagger
+- Asp.Net Core
+- Docker
+- Postgres
+- Entity Framework Core
+- Swagger
 
