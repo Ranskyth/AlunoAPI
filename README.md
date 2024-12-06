@@ -1,100 +1,106 @@
-## Running the Project
 
-```bash
-git clone https://github.com/GabrielLimaG3/AlunoAPI.git
+# AlunoAPI
 
-cd AlunoAPI
+AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 
-docker compose up -d
-sudo chmod 777 ./data
-sudo chown 999:999 ./data
 
-dotnet ef migrations add <Name_Migration>
-dotnet ef database update
+## Funcionalidades
+
+- [x]   Cadastro de Usuario
+- [x]   Consulta de Usuario Por ID e Nome
+- [x]   Atualizar Cliente Pelo ID
+- [x]   Deleta Todos os Usuario ou Deleta Por ID
+
+
+## Documentação da API
+
+#### Rota Padrão do Swagger
+```http
+  GET /swagger/index.html
 ```
 
-<h2 align="center">Endpoints</h2>
+#### Retorna todos os Alunos
+```http
+  GET /api/v1/aluno/
+```
 
-<table align="center" border>
-  <tr>
-    <th>Method</th>
-    <th>Endpoint</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>GET</td>
-    <td>/api/v1/alunos</td>
-    <td>Returns a list of all alunos</td>
-  </tr>
-  <tr>
-    <td>Delete</td>
-    <td>/api/v1/alunos/{nome}/nome</td>
-    <td>delete of a specific alunos by nome</td>
-  </tr>
-  <tr>
-    <td>POST</td>
-    <td>/api/v1/alunos</td>
-    <td>Endpoint to create a new aluno entry</td>
-  </tr>
-</table>
+#### Retorna um Aluno pelo id
+```http
+  GET /api/v1/aluno/{id}/id
+```
 
-<h2 align="center">Dependencies</h2>
+#### Retorna um Aluno pelo Nome
+```http
+  GET /api/v1/aluno/{nome}/nome
+```
+#### Criar Um Aluno
+```http
+  POST /api/v1/aluno/
+```
+#### Atualizar Aluno Pelo id
+```http
+  PUT /api/v1/aluno/{id}/id
+```
 
-<table align="center" border>
-  <tr>
-    <th>Package</th>
-    <th>Version</th>
-    <th>Link</th>
-  </tr>
-  <tr>
-    <td>Microsoft.EntityFrameworkCore</td>
-    <td>8.0.2</td>
-    <td>
-      <a
-        href="https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/8.0.2"
-        >NuGet</a
-      >
-    </td>
-  </tr>
-  <tr>
-    <td>Microsoft.EntityFrameworkCore.Design</td>
-    <td>8.0.2</td>
-    <td>
-      <a
-        href="https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/3.1.8"
-        >NuGet</a
-      >
-    </td>
-  </tr>
-  <tr>
-    <td>Npgsql.EntityFrameworkCore.PostgreSQL</td>
-    <td>8.0.2</td>
-    <td>
-      <a
-        href="https://www.nuget.org/packages/Npgsql.EntityFrameworkCore.PostgreSQL/8.0.2"
-        >NuGet</a
-      >
-    </td>
-  </tr>
-  <tr>
-    <td>Microsoft.EntityFrameworkCore.Tools</td>
-    <td>8.0.2</td>
-    <td>
-      <a href="https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/8.0.2">NuGet</a>
-    </td>
-  </tr>
-    <tr>
-    <td>Swashbuckle.AspNetCore</td>
-    <td>6.6.2</td>
-    <td>
-      <a href="https://www.nuget.org/packages/Swashbuckle.AspNetCore/6.6.1">NuGet</a>
-    </td>
-  </tr>
-    <tr>
-    <td>Microsoft.AspNetCore.OpenApi</td>
-    <td>8.0.10</td>
-    <td>
-      <a href="https://www.nuget.org/packages/Microsoft.AspNetCore.OpenApi/8.0.10">NuGet</a>
-    </td>
-  </tr>
-</table>
+#### Deleta Aluno Pelo id
+```http
+  DELETE /api/v1/aluno/{id}/id
+```
+
+#### Deleta Todos os Alunos
+```http
+  DELETE /api/v1/aluno/all
+```
+
+
+## Rodando localmente
+
+#### Clone o projeto
+
+```bash
+  git clone https://github.com/GabrielLimaG3/AlunoAPI.git
+```
+
+#### Entre no diretório do projeto
+
+```bash
+  cd AlunoAPI
+```
+
+#### Instale as dependências
+
+```bash
+  dotnet add package Microsoft.EntityFrameworkCore --version 8.0.2
+  dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.2
+  dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.2
+  dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.2
+  dotnet add package Microsoft.AspNetCore.OpenApi --version 8.0.10
+  dotnet add package Swashbuckle.AspNetCore --version 6.6.2
+```
+
+#### Configurar o Container do Postgres
+```bash
+  docker compose up -d
+  sudo chmod 777 ./data
+  sudo chown 999:999 ./data
+```
+
+#### Configura Migration e o Banco de Dados 
+
+__obs__ : Crie uma migration (substitua <Nome_Migration> por um nome significativo, como InitialMigration):
+```
+  dotnet ef migrations add <Name_Migration>
+  dotnet ef database update
+```
+
+#### Inicia a Aplicação
+
+```bash
+  dotnet watch run
+```
+
+
+## Stack utilizada
+
+**Back-end:** Asp.Net Core, Docker, Postgres, Entity Framework Core, Swagger
+

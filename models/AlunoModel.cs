@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+
 
 namespace AlunoAPI.models
 {
     public class AlunoModel
     {
-
         public AlunoModel()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.Empty;
+            Nome = string.Empty;
+            Email = string.Empty;
+            DataNascimento = string.Empty;
+            Telefone = string.Empty;
             DataInicioCurso = DateTime.Now;
             DataFimCurso = DateTime.Now;
         }

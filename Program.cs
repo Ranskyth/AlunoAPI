@@ -1,5 +1,6 @@
 using AlunoAPI.context;
 using AlunoAPI.models;
+using AlunoAPI.Routes;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,27 +22,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var groupRoutes = app.MapGroup("/api/v1");
-
-groupRoutes.MapPost("/aluno", (AppContextDB context, AlunoModel aluno) => {
-    context.Alunos.Add(aluno);
-    context.SaveChanges();
-    return Results.Created($"/Aluno/{aluno.Id}", aluno);
-});
-
-groupRoutes.MapGet("/alunos", async (AppContextDB context)=>{
-    List<AlunoModel> Alunos = await context.Alunos.ToListAsync();
-    return Results.Ok(Alunos);
-});
-
-groupRoutes.MapDelete("/aluno/{nome}/nome", async (AppContextDB context, string nome) => {
-    var alunodelete = await context.Alunos.Where(x => x.Nome == nome).FirstOrDefaultAsync();
-    if(alunodelete == null){
-        return Results.NotFound();
-    }
-    context.Alunos.Remove(alunodelete);
-    context.SaveChanges();
-    return Results.NoContent();
-});
+app.Route();
 
 app.Run();
