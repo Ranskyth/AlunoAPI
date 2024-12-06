@@ -15,40 +15,40 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 ## Documentação da API
 
 #### Rota Padrão do Swagger
-```http
+```
   GET /swagger/index.html
 ```
 
 #### Retorna todos os Alunos
-```http
+```
   GET /api/v1/aluno/
 ```
 
 #### Retorna um Aluno pelo id
-```http
+```
   GET /api/v1/aluno/{id}/id
 ```
 
 #### Retorna um Aluno pelo Nome
-```http
+```
   GET /api/v1/aluno/{nome}/nome
 ```
 #### Criar Um Aluno
-```http
+```
   POST /api/v1/aluno/
 ```
 #### Atualizar Aluno Pelo id
-```http
+```
   PUT /api/v1/aluno/{id}/id
 ```
 
 #### Deleta Aluno Pelo id
-```http
+```
   DELETE /api/v1/aluno/{id}/id
 ```
 
 #### Deleta Todos os Alunos
-```http
+```
   DELETE /api/v1/aluno/all
 ```
 
