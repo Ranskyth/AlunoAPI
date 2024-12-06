@@ -70,12 +70,7 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 #### Instale as dependências
 
 ```bash
-  dotnet add package Microsoft.EntityFrameworkCore --version 8.0.2
-  dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.2
-  dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.2
-  dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.2
-  dotnet add package Microsoft.AspNetCore.OpenApi --version 8.0.10
-  dotnet add package Swashbuckle.AspNetCore --version 6.6.2
+  dotnet restore
 ```
 
 #### Configurar o Container do Postgres
