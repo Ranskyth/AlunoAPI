@@ -9,7 +9,7 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 - [x]   Cadastro de Aluno
 - [x]   Consulta de Aluno Por ID e Nome
 - [x]   Atualizar Aluno Pelo ID
-- [x]   Deleta Todos os Aluno ou Deleta Por ID
+- [x]   Deleta Por ID do aluno
 
 
 ## Documentação da API
@@ -47,12 +47,6 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
   DELETE /api/v1/aluno/{id}/id
 ```
 
-#### Deleta Todos os Alunos
-```
-  DELETE /api/v1/aluno/all
-```
-
-
 ## Rodando localmente
 
 #### Clone o projeto
@@ -73,27 +67,11 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
   dotnet restore
 ```
 
-#### Configurar o Container do Postgres
-```bash
-  docker compose up -d
-  sudo chmod 777 ./data
-  sudo chown 999:999 ./data
-```
-
-#### Configura Migration e o Banco de Dados 
-
-__obs__ : Crie uma migration (substitua <Nome_Migration> por um nome significativo, como InitialMigration):
-```
-  dotnet ef migrations add <Name_Migration>
-  dotnet ef database update
-```
-
 #### Inicia a Aplicação
 
 ```bash
   dotnet watch run
 ```
-
 
 ## Stack utilizada
 
