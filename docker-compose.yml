@@ -1,6 +1,7 @@
 
 services:
   db:
+    container_name: aluno_api
     image: postgres:alpine
     environment:
       - POSTGRES_DB=postgres
@@ -8,9 +9,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
-    user: "999:999"
     volumes:
-      - ./data:/var/lib/postgresql/data
-
+      - /data/aluno_api:/var/lib/postgresql/data
 volumes:
   db:
