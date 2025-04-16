@@ -52,7 +52,7 @@ AlunoAPI é uma API para cadastro e gerenciamento de informações de alunos.
 #### Clone o projeto
 
 ```bash
-  git clone https://github.com/GabrielLimaG3/AlunoAPI.git
+  git clone https://github.com/Ranskyth/AlunoAPI
 ```
 
 #### Entre no diretório do projeto
